@@ -1,0 +1,13 @@
+@tickets.map do |ticket|
+  {
+    id: ticket.id,
+    title: ticket.title,
+    issue: ticket.issue,
+    created: ticket.created,
+    originator: ticket.originator,
+    user_id: ticket.user_id,
+    user_name: ticket.user.name,
+    resolution: ticket.resolution,
+    status: ticket.status,
+  }
+end
