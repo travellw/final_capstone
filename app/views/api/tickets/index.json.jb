@@ -5,8 +5,9 @@
     issue: ticket.issue,
     created: ticket.created,
     originator: ticket.originator,
+    # owner: ticket.owner,
     user_id: ticket.user_id,
-    user_name: ticket.user.name,
+    # user_name: ticket.name,
     resolution: ticket.resolution,
     status: ticket.status,
   }

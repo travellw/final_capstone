@@ -1,10 +1,8 @@
 {
-  id: @ticket.id,
-  title: @ticket.title,
-  issue: @ticket.issue,
-  created: @ticket.created,
-  originator: @ticket.originator,
-  owner: @ticket.owner,
-  resolution: @ticket.resolution,
-  status: @ticket.status,
+    id: @user.id,
+    name: @user.name,
+    email: @user.email,
+    # password: user.password,
+    title: @user.title,
+    tickets: @user.tickets,
 }

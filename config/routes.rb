@@ -10,9 +10,9 @@ Rails.application.routes.draw do
     #user routes
     post "/users" => "users#create"
     get "/users" => "users#index"
-    get "/users/:id" => "tickets#show"
-    patch "/users/:id" => "user#update"
-    delete "/tickets/:id" => "tickets#destroy"
+    get "/users/:id" => "users#show"
+    patch "/users/:id" => "users#update"
+    delete "/users/:id" => "users#destroy"
 
     #attachment routes
     post "/attachments" => "attachments#create"
