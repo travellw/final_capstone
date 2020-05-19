@@ -5,9 +5,9 @@ class Api::TicketsController < ApplicationController
   end
 
   def create
-    response = Cloudinary::Uploader.upload(params[:url])
-    cloudinary_url = response["secure_url"]
-
+    # response = Cloudinary::Uploader.upload(params[:url])
+    # cloudinary_url = response["secure_url"]
+    cloudinary_url = "https://sciences.ucf.edu/psychology/wp-content/uploads/sites/63/2019/09/No-Image-Available.png"
     @ticket = Ticket.new(
     #  id: params[:id],
      title: params[:title],
@@ -17,8 +17,8 @@ class Api::TicketsController < ApplicationController
     #  owner: params[:owner],
      resolution: params[:resolution],
      status: params[:status],
-     user_id: 5,
-     url: cloudinary_url,
+     user_id: 1,
+    #  url: cloudinary_url,
     ) 
     if @ticket.save 
       render "show.json.jb"
@@ -34,14 +34,14 @@ class Api::TicketsController < ApplicationController
   
   def update
     @ticket = Ticket.find_by(id: params[:id])
-    @ticket.id = params[:id] || @ticket.id
     @ticket.title = params[:title] || @ticket.title
     @ticket.issue = params[:issue] || @ticket.issue
     @ticket.created = params[:created] || @ticket.created
     @ticket.originator = params[:originator] || @ticket.originator
     # @ticket.owner = params[:owner] || @ticket.owner
     @ticket.resolution = params[:resolution] || @ticket.resolution
-    @ticket.status = params[:statu] || @ticket.status
+    @ticket.status = params[:status] || @ticket.status
+    @ticket.save 
     render "show.json.jb"
   end
 
