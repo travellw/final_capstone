@@ -7,7 +7,6 @@ class Api::TicketsController < ApplicationController
   def create
     # response = Cloudinary::Uploader.upload(params[:url])
     # cloudinary_url = response["secure_url"]
-    cloudinary_url = "https://sciences.ucf.edu/psychology/wp-content/uploads/sites/63/2019/09/No-Image-Available.png"
     @ticket = Ticket.new(
     #  id: params[:id],
      title: params[:title],
@@ -18,7 +17,7 @@ class Api::TicketsController < ApplicationController
      resolution: params[:resolution],
      status: params[:status],
      user_id: 1,
-    #  url: cloudinary_url,
+    #  cloudinary_url: cloudinary_url,
     ) 
     if @ticket.save 
       render "show.json.jb"
